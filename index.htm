@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<title>Tangram</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$(".draggable").draggable({snap: true});
+		});
+	</script>
+	<style>
+		.triangle1 {
+			width: 0;
+			height: 0;
+			border-top: 200px solid transparent;
+			border-bottom: 200px solid transparent;
+			border-right: 200px solid red;
+		}
+
+		.triangle2 {
+			width: 0px;
+			height: 0px;
+			border-left: 200px solid transparent;
+			border-right: 200px solid transparent;
+			
+			border-top: 200px solid red;
+		}
+		
+		.triangle3 {
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid transparent;
+			
+			border-left: 100px solid red;
+		}
+		
+		.triangle4 {
+			width: 0px;
+			height: 0px;
+			border-left: 100px solid transparent;
+			border-right: 100px solid transparent;
+			
+			border-bottom: 100px solid red;
+		}
+
+		.triangle5 {
+			width: 0;
+			height: 0;
+			border-bottom: 200px solid red;
+			border-right: 200px solid transparent;
+		}
+
+		.square {
+			width: 0;
+			height: 0;
+			border: 100px solid transparent;
+			border-bottom-color: red;
+			position: relative;
+			top: -100px;
+		}
+		
+		.square:after {
+			content: '';
+			position: absolute;
+			left: -100px;
+			top: 100px;
+			width: 0;
+			height: 0;
+			border: 100px solid transparent;
+			border-top-color: red;
+		}
+
+		.parallelogram {
+			width: 100px;
+			height: 200px;
+			-webkit-transform: skew(0, 45deg);
+			-moz-transform: skew(0, 45deg);
+		  -o-transform: skew(0, 45eg);
+		 	background: red;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	
+	<div class="triangle1 draggable"></div>
+	<div class="square draggable"></div>
+	<div class="triangle2 draggable"></div>
+	<div class="triangle3 draggable"></div>
+	<div class="triangle4 draggable"></div>
+	<div class="triangle5 draggable"></div>
+	<div class="parallelogram draggable"></div>
+
+</body>
+
+</html>
